@@ -34,7 +34,7 @@ git clone https://github.com/aymanbest/KeyHaven.git
 
 2. Install dependencies:
 ```bash
-cd key-heaven
+cd KeyHaven
 npm install
 ```
 
