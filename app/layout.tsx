@@ -8,7 +8,7 @@ import { BackgroundDesign } from "@/components/background-design"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "SecurePass Generator",
+  title: "KeyHaven",
   description: "Generate secure passwords and manage your password history",
 }
 
