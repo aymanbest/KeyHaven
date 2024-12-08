@@ -37,10 +37,6 @@ export function PasswordHistory() {
     setRevealedPasswords(prev => ({ ...prev, [index]: !prev[index] }))
   }
 
-  const toggleNoteExpand = (index: number) => {
-    setExpandedNotes(prev => ({ ...prev, [index]: !prev[index] }))
-  }
-
   const paginatedHistory = history.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
 
   return (
@@ -94,7 +90,10 @@ export function PasswordHistory() {
                           <div className="md:hidden">
                             <span>{entry.note.slice(0, 100)}...</span>
                             <CollapsibleContent>{entry.note.slice(100)}</CollapsibleContent>
-                            <CollapsibleTrigger asChild>
+                            <CollapsibleTrigger asChild onClick={() => setExpandedNotes(prev => ({
+                              ...prev,
+                              [index]: !prev[index]
+                            }))}>
                               <Button variant="link" size="sm" className="p-0 h-auto font-normal">
                                 {expandedNotes[index] ? (
                                   <span className="flex items-center">Read less <ChevronUp className="h-4 w-4 ml-1" /></span>
